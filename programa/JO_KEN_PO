@@ -1,0 +1,30 @@
+import random
+import sys
+print(''' Sua opções:
+[ 0 ] PEDRA
+[ 1 ] PAPEL
+[ 2 ] TESOURA''')
+player = str(input('Qual é a sua jogada? '))
+cpu = str(random.randint(0,2))
+print('-=-'*50)
+cpumodi = cpu.replace('0', 'Pedra').replace('1','Papel').replace('2','Tesoura')
+playermodi = player.replace('0', 'Pedra').replace('1','Papel').replace('2','Tesoura')
+player = int(player) #convertendo as strings em números inteiros
+cpu = int(cpu) #convertendo as strings em números inteiros
+if player >2:
+    print('Digite uma opção válida!')
+    sys.exit()
+print('''JO
+KEN
+PO!!!''')
+
+print(f'''Computador jogou {cpumodi}
+Jogador jogou {playermodi}''')
+print('-=-'*50)
+
+if player == 1 and cpu == 0 or player == 2 and cpu == 1 or player == 0 and cpu == 2:
+    print('VOCÊ VENCEU!')
+elif cpu==1 and player==0 or cpu==2 and player==1 or cpu==0 and player==2:
+    print('Computador venceu')
+elif player == cpu:
+    print('Empate!')
